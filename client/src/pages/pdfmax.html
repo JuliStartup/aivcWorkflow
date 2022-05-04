@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+    <style>
+      /**
+ * FilePond Custom Styles
+ */
+      .filepond--drop-label {
+        color: #4c4e53;
+      }
+
+      .filepond--label-action {
+        text-decoration-color: #babdc0;
+      }
+
+      .filepond--panel-root {
+        border-radius: 2em;
+        background-color: #edf0f4;
+        height: 1em;
+      }
+
+      .filepond--item-panel {
+        background-color: #595e68;
+      }
+
+      .filepond--drip-blob {
+        background-color: #7f8a9a;
+      }
+
+      /**
+ * Page Styles
+ */
+      html {
+        padding: 30vh 0 0;
+      }
+
+      body {
+        max-width: 20em;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+The classic file input element we'll enhance to a file pond
+-->
+    <input
+      type="file"
+      class="filepond"
+      name="filepond"
+      multiple
+      data-max-file-size="3MB"
+      data-max-files="3"
+    />
+
+    <script>
+      // Register the plugin
+      FilePond.registerPlugin(FilePondPluginFileEncode);
+
+      // ... FilePond initialisation code here
+    </script>
+    <script>
+      /*
+We want to preview images, so we need to register the Image Preview plugin
+*/
+      FilePond.registerPlugin(
+        // encodes the file as base64 data
+        FilePondPluginFileEncode,
+
+        // validates the size of the file
+        FilePondPluginFileValidateSize,
+
+        // corrects mobile image orientation
+        FilePondPluginImageExifOrientation,
+
+        // previews dropped images
+        FilePondPluginImagePreview
+      );
+
+      // Select the file input and use create() to turn it into a pond
+      FilePond.create(document.querySelector('input'));
+    </script>
+    <!-- file upload itself is disabled in this pen -->
+  </body>
+</html>

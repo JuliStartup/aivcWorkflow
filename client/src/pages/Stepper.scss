@@ -1,0 +1,9 @@
+.main-card-header {
+  margin-top: 70px;
+  margin-bottom: -30px;
+}
+@media screen and (max-width: 960px) {
+  .main-card-header {
+    margin-bottom: 0px;
+  }
+}

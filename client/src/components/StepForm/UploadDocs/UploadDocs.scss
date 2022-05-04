@@ -1,0 +1,79 @@
+input[type='file']::file-selector-button {
+  border: 2px solid #38368a;
+  border-radius: 8px;
+  background-color: #38368a;
+  transition: 1s;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+  font-family: 'PT Sans', sans-serif;
+  padding: 4px 14px;
+  color: #fff;
+} /* error state color */
+[data-filepond-item-state*='error'] .filepond--item-panel,
+[data-filepond-item-state*='invalid'] .filepond--item-panel {
+  background-color: #e31717;
+}
+.filepond--file {
+  font-weight: 700;
+}
+[data-filepond-item-state='success'] .filepond--item-panel {
+  background-color: green;
+}
+
+a.filepond--credits {
+  display: none;
+}
+.filepond--drop-label {
+  background: #e3e3ff;
+  color: #38368a;
+}
+.submit {
+  width: 140px;
+  height: 40px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.file {
+  position: relative;
+  height: 30px;
+  width: 100px;
+}
+.file > label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #38368a;
+  color: #fff;
+  border-radius: 8px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'PT Sans', sans-serif;
+}
+
+input {
+  font-weight: 600;
+}
+input[type='file']::file-selector-button:hover {
+  background-color: #fff;
+  color: #38368a;
+  border: 2px solid #38368a;
+}
+.main-missing-top {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+}
+// @media screen and (max-width: 960px) {
+//   .main-missing-top {
+//     margin-top: 0px;
+//   }
+// }

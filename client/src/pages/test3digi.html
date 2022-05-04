@@ -1,0 +1,68 @@
+<script src="https://get.mavo.io/mavo.js"></script>
+<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+<style>html, body { margin:0; background:#def; font-family:sans-serif;  height:100%;   }
+main {height:100%; padding:1em; }
+header {padding:6px 12px;}
+#signs {
+  display:flex;
+  flex:1 1 auto;
+  flex-wrap:wrap;
+  background:#fff;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  grid-template-rows:  repeat(4, minmax(200px, max-content) );
+}
+.sign-thumb {
+  border:solid 1px #ccc;
+  background:white;
+  padding:8px;
+  display:inline-block;
+  box-shadow:0 1px 8px rgba(0,0,0,.15);
+  margin:8px;
+  vertical-align:top;
+  display:flex;
+  flex-direction:column;
+}
+figure {margin:0; padding:0; flex:1 1 auto;  }
+.sign-image {
+  max-width:100%;
+  height:auto;
+}
+.sign-image.mv-empty {
+  width:100%;  min-height:150px;
+   background: linear-gradient(to bottom right, transparent 49%, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 51%, transparent 0), linear-gradient(to bottom left, transparent 49%, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 51%, transparent 0) rgba(255, 255, 255, 0.1);
+  background-color:teal;
+}
+figcaption  {
+  display:block;
+  border:solid 1px #ddd;
+  padding:8px;
+}
+
+.mv-add {padding:16px; margin:8px;}
+ </style>
+<main mv-storage="local" mv-app id="digiSign" class="mv-autoedit">
+
+  <header>
+    <p style="float:right;"><b>Total Signs: [count(sign)]</b></p>
+    <h1>Digital Sign Manager (Mavo Experiment)</h1>
+    <p>You can add new signs, change images, change text and save the results.  </p>
+      <p>The results are saved locally on your computer.</p>
+  </header>
+    
+  
+  <section id="signs">
+    <div class="sign-thumb" property="sign" mv-multiple>
+      <figure>
+       <img property="signImage" class="sign-image" src="http://www.elisondentalcenter.com/layout/02-whitening-for-life-club.jpg"> 
+       <figcaption property="signTitle">Your Sign's Title</figcaption>
+      </figure>
+     </div>
+  </section>
+  
+
+  
+</main>
+
+
+</main>
